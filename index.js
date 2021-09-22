@@ -7,8 +7,7 @@ function fillButton(index, text) {
 
 // SAMPLE CODE: This code fills the 1st and 9th button with X and O initially
 // Delete this code once you are done testing
-fillButton(1, "X");
-fillButton(9, "O");
+
 
 /**
  *
@@ -17,13 +16,21 @@ fillButton(9, "O");
  * Add your code here, since this is going to be your main function
  * That interacts with the UI
  */
-function clickButton(index) {
+let count = 9
+function clickButton(index, text) {
+  if (count % 2 !== 0) {
+    text = "O"
+  } else {
+    text ="X"
+  }
   console.log(`Button number ${index} is clicked`);
+  fillButton(index, text);
+  count = count - 1
 }
 
 // in this function you should check if the player is X or O
 function checkPlayer() {
-  // ....
+  
 }
 
 /**
@@ -39,3 +46,4 @@ function checkPlayer() {
 function winningAlert(winner) {
   alert(`Horraaay, ${winner} wins!`);
 }
+
